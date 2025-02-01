@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PathPatrol - Contact Us</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logoss.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='navbar_public.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='contact.css') }}"
+    />
+  </head>
+  <body>
+    {% include 'navbar_public.html' %}
+    <main>
+      <div class="contact-container">
+        <div class="image-section">
+          <img
+            src="{{ url_for('static', filename='images/contacts.png') }}"
+            alt="Contact Us"
+          />
+        </div>
+        <div class="form-section">
+          <h1>Contact Us</h1>
+          <form id="contact-form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              required
+            />
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+          <p id="form-status"></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Script -->
+    <script
+      src="{{ url_for('static', filename='scripts.js') }}"
+      type="module"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("f3ZY6GFoyqGQFp3q4"); // Initialize EmailJS after DOM loaded
+      });
+    </script>
+    <script
+      src="{{ url_for('static', filename='contact.js') }}"
+      type="module"
+    ></script>
+  </body>
+</html>

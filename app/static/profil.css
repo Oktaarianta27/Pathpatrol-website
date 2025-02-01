@@ -1,0 +1,157 @@
+.profil {
+  font-family: Arial, sans-serif;
+  padding: 70px 0px;
+  background-color: #e5e8eb;
+  position: relative;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.4s ease;
+  min-height: 96vh;
+}
+.sidebar.close ~ .profil {
+  left: 70px;
+  width: calc(100% - 70px);
+}
+
+/* Container for profile */
+#profile {
+  max-width: 800px; /* Adjust the container size */
+  margin: 10px auto; /* Center the profile with margin */
+  padding: 20px;
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Split into 2 columns */
+  gap: 20px; /* Space between the image and text */
+}
+
+#profile-img {
+  width: 100%; /* Make the image fill the container */
+  max-width: 250px; /* Keep a max width for the image */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  border-radius: 12px; /* Rounded corners for the image */
+  border: 4px solid #ddd; /* Light border around the image */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Shadow around the image */
+  margin: 0 auto; /* Center the image */
+}
+
+#profile-img:hover {
+  transform: scale(1.05); /* Zoom effect when hovered */
+  transition: transform 0.3s ease;
+}
+
+#profile-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out profile text and buttons */
+}
+
+#profile-text p {
+  font-size: 16px; /* Smaller text for better readability */
+  color: #333;
+  margin: 8px 0;
+}
+
+#profile-text strong {
+  font-weight: 600;
+  color: #4caf50; /* Accent color for labels */
+}
+
+#profile-text span {
+  font-weight: 400;
+  color: #555;
+}
+
+#edit-btn,
+#save-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Make buttons fill the available width */
+  margin-top: 15px;
+  text-align: center; /* Center the button text */
+}
+
+#edit-btn {
+  background-color: #ffa500; /* Orange for edit */
+  color: white;
+}
+
+#save-btn {
+  background-color: #4caf50; /* Green for save */
+  color: white;
+}
+
+#edit-btn:hover,
+#save-btn:hover {
+  opacity: 0.85; /* Slight opacity change on hover */
+  transform: translateY(-2px); /* Lift the button slightly */
+}
+
+#edit-btn:focus,
+#save-btn:focus {
+  outline: none;
+}
+
+#edit-btn:active,
+#save-btn:active {
+  background-color: #e68900; /* Darker orange for active state */
+  transform: translateY(1px); /* Button pressed effect */
+}
+
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dialog-box p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.dialog-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+#confirm-yes {
+  background-color: #4caf50;
+  color: white;
+}
+
+#confirm-no {
+  background-color: #ffa500;
+  color: white;
+}
+
+#confirm-yes:hover,
+#confirm-no:hover {
+  opacity: 0.85;
+}

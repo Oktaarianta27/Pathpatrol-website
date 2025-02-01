@@ -1,0 +1,19 @@
+.panduan {
+  font-family: Arial, sans-serif;
+  padding: 70px 0px;
+  background-color: #e5e8eb;
+  position: relative;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.4s ease;
+  min-height: 96vh;
+}
+.sidebar.close ~ .panduan {
+  left: 70px;
+  width: calc(100% - 70px);
+}
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 40px;
+}

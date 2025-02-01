@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logoss.png') }}"
+    />
+    <title>PathPatrol</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'navbar_private.html' %}
+    <section class="data">
+      <div class="position">
+        <div class="download">
+          <button class="click" onclick="downloadPDF()">
+            <i class="bx bxs-printer"></i> Download
+          </button>
+        </div>
+      </div>
+      <!-- <div id="hiddenForms" style="display: none"></div> -->
+      <div class="table-section">
+        <table class="roadDataTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">NO</th>
+              <th onclick="sortTable(1)">Perangkat</th>
+              <th onclick="sortTable(2)">Image</th>
+              <th onclick="sortTable(3)">Koordinat</th>
+              <th onclick="sortTable(4)">Jenis</th>
+              <th onclick="sortTable(5)">Waktu</th>
+              <th onclick="sortTable(6)">Dimensi</th>
+              <th onclick="sortTable(7)">Tingkat</th>
+              <th onclick="sortTable(8)">Status</th>
+              <th onclick="sortTable(9)">Tindakan</th>
+              <th onclick="sortTable(10)">Bukti</th>
+              <th onclick="sortTable(11)">Action</th>
+            </tr>
+          </thead>
+          <tbody id="imageGallery">
+            <!-- Data will be loaded here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      <div id="imageModal" class="custom-zooms">
+        <span class="custom-zooms-btn" onclick="closeImageModal()"
+          >&times;</span
+        >
+        <img id="modalImage" class="modal-content" />
+        <div id="caption" class="caption"></div>
+      </div>
+
+      <!-- Dialog for Delete -->
+      <div id="confirmDialog" class="modal">
+        <p>Apakah Anda yakin ingin menghapus data ini?</p>
+        <div class="modal-buttons">
+          <button id="confirmYes" class="btn-danger">Ya</button>
+          <button id="confirmNo" class="btn-secondary">Tidak</button>
+        </div>
+      </div>
+      <div id="overlay" class="overlay"></div>
+      <!-- Dialog for Change Status -->
+      <div id="statusModal" class="modals">
+        <div class="modals-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <p id="modalMessage"></p>
+        </div>
+      </div>
+      <!-- Modal for displaying messages -->
+      <div id="customMessageModal" class="custom-modal">
+        <div class="custom-modal-content">
+          <span id="customCloseModal" class="custom-close">&times;</span>
+          <p id="customModalMessage"></p>
+        </div>
+      </div>
+      <!-- Overlay for modal -->
+      <div id="customModalOverlay" class="custom-overlay"></div>
+      <!-- Pagination section -->
+      <section class="pagination-section">
+        <div class="pagination-controls">
+          <button id="prevPage" disabled>Previous</button>
+          <span id="pageInfo">Page 1</span>
+          <button id="nextPage">Next</button>
+        </div>
+      </section>
+    </section>
+
+    {% include 'footer.html' %}
+    <script
+      type="module"
+      src="{{ url_for('static', filename='upload.js') }}"
+      defer
+    ></script>
+    <script src="{{ url_for('static', filename='laporan.js') }}" defer></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='delete.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='main.js') }}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='login-auth.js') }}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='scripts.js') }}"
+      type="module"
+    ></script>
+    <!-- Tambahkan jsPDF dan jsPDF AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
+  </body>
+</html>

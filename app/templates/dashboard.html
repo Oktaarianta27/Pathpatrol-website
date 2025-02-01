@@ -1,0 +1,91 @@
+<html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="icon"
+        href="{{ url_for('static', filename='images/logoss.png') }}"
+      />
+      <title>PathPatrol</title>
+      <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+      />
+      <link
+        href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+      {% include 'navbar_private.html' %}
+      <section class="main">
+        <div id="content-container">
+          <div class="main-header">
+            <div class="main-text">
+              <h1 id="greeting-text">Halo, Admin</h1>
+              <p>
+                Selamat datang di Website Sistem Deteksi dan Pelaporan Kerusakan
+                Jalan
+              </p>
+            </div>
+            <div class="header-img">
+              <img
+                src="{{ url_for('static', filename='images/car.png') }}"
+                alt="User Illustration"
+              />
+            </div>
+          </div>
+          <section class="bar-report">
+            <div class="report-card total">
+              <h1>Total Kerusakan</h1>
+              <h2 id="totalDamage">0</h2>
+            </div>
+            <div class="report-card pothole">
+              <h1>Total Pothole</h1>
+              <h2 id="totalPothole">0</h2>
+            </div>
+            <div class="report-card aligator">
+              <h1>Aligator Crack</h1>
+              <h2 id="totalCrack">0</h2>
+            </div>
+            <div class="report-card longitudinal">
+              <h1>Longitudinal Crack</h1>
+              <h2 id="totalLongitudinal">0</h2>
+            </div>
+            <div class="report-card transverse">
+              <h1>Transverse Crack</h1>
+              <h2 id="totalTransverse">0</h2>
+            </div>
+            <div class="report-card revair">
+              <h1>Repair</h1>
+              <h2 id="totalRevair">0</h2>
+            </div>
+          </section>
+          <section class="map-container">
+            <div id="map"></div>
+          </section>
+        </div>
+      </section>
+      {% include 'footer.html' %}
+      <script
+        src="{{ url_for('static', filename='bardatareport.js') }}"
+        type="module"
+      ></script>
+      <script
+        src="{{ url_for('static', filename='main.js') }}"
+        type="module"
+      ></script>
+      <script
+        src="{{ url_for('static', filename='login-auth.js') }}"
+        type="module"
+      ></script>
+      <script
+        type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQPYG38OUQko7R4k--Q9YfV2WptaCJihA"
+        loading="async"
+      ></script>
+    </body>
+  </html>
+</html>

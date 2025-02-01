@@ -1,0 +1,393 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner Section */
+section.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 91.5vh;
+  background-color: #ffffff;
+  padding: 40px;
+}
+
+.banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.banner-content h1 {
+  font-family: poppins;
+  font-weight: bold;
+  text-decoration: underline #ffc800;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-banner {
+  display: inline-block;
+  background-color: #ffc800;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-banner:hover {
+  background-color: #ffc400;
+}
+
+.banner-image {
+  flex: 1;
+  text-align: right;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+}
+/* bar section */
+.bar-section {
+  background-color: #ffc800;
+}
+.title-bar {
+  font-family: poppins;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: underline #ffc800;
+  color: #333;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+.bar-report {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 100%; /* Max width for the content */
+}
+.report-card {
+  background-color: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+
+.report-card:hover {
+  transform: translateY(-5px); /* Slight raise effect on hover */
+}
+
+.report-card h1 {
+  font-family: poppins;
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.report-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc800; /* Main color */
+}
+
+/* Specific Styling for Each Card */
+.total {
+  background-color: #ffffff;
+}
+
+.pothole {
+  background-color: #ffffff;
+}
+
+.aligator {
+  background-color: #ffffff;
+}
+
+.longitudinal {
+  background-color: #ffffff;
+}
+
+.transverse {
+  background-color: #ffffff;
+}
+
+.revair {
+  background-color: #ffffff;
+}
+.hidden {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bar-report {
+    grid-template-columns: 1fr; /* Stacked layout on smaller screens */
+  }
+}
+
+/* Table Section */
+.table-section {
+  margin: 5rem 0;
+}
+.table-wrapper {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roadDataTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-family: poppins;
+}
+
+.roadDataTable th,
+.roadDataTable td {
+  padding: 12px;
+  text-align: center;
+  border: none;
+  font-size: 17px;
+}
+
+.roadDataTable thead th {
+  background-color: #ffc800;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  height: 70px;
+  text-align: center;
+}
+
+.roadDataTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.roadDataTable tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.roadDataTable tbody td {
+  width: 200px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Pagination Section */
+.pagination-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 10px 10px;
+  background-color: #ffc800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.pagination-controls button:hover {
+  background-color: #deae01;
+}
+
+.pagination-controls #pageInfo {
+  margin: 0 15px;
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+/* Section Zoom Model */
+.custom-zooms {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 200px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.custom-zooms-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.modal-content {
+  max-width: 100%;
+  max-height: 80%;
+  margin: auto;
+  display: block;
+}
+
+.caption {
+  text-align: center;
+  color: #ccc;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+/* Video Section */
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #ffc800;
+}
+
+.video-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.video-container h1 {
+  font-family: popoins;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.video-frame {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  object-fit: cover; /* Memperbesar video agar tidak ada padding hitam */
+}
+
+.video-frame:hover {
+  transform: scale(1.02);
+}
+
+/* Footer Section */
+.footer {
+  background: #ffffff; /* Warna dark Bootstrap */
+  color: #000000;
+  padding: 20px 0;
+}
+
+.footer a {
+  color: #000000; /* Warna link menjadi putih */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #fca311; /* Warna kuning saat hover */
+}
+
+.footer .nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer p {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content,
+  .banner-image {
+    max-width: 100%;
+  }
+
+  .banner-image img {
+    margin: 0 auto;
+    display: block; /* Pastikan gambar menjadi block agar margin auto bisa bekerja */
+    align-items: center;
+    max-width: 70%;
+  }
+  .table-wrapper {
+    width: 95%;
+  }
+
+  .roadDataTable th,
+  .roadDataTable td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .pagination-controls button {
+    width: 80px;
+    padding: 8px;
+  }
+
+  .news-card h3 {
+    font-size: 1rem;
+  }
+
+  .news-card p {
+    font-size: 0.8rem;
+  }
+
+  .video-frame {
+    height: 300px;
+  }
+}

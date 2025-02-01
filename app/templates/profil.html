@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/logoss.png') }}"
+    />
+    <title>PathPatrol</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profil.css') }}"
+    />
+  </head>
+  <body>
+    {% include 'navbar_private.html' %}
+    <section class="profil">
+      <div id="profile">
+        <img id="profile-img" src="profile-img-url.jpg" alt="Profile Image" />
+        <div id="profile-text">
+          <p><strong>Username:</strong> <span id="username">N/A</span></p>
+          <p><strong>Full Name:</strong> <span id="fullname">N/A</span></p>
+          <p><strong>Email:</strong> <span id="email">N/A</span></p>
+          <p><strong>Phone Number:</strong> <span id="phone">N/A</span></p>
+          <button id="edit-btn">Edit</button>
+          <button id="save-btn">Save</button>
+        </div>
+      </div>
+
+      <div id="confirm-dialog" class="confirm-dialog">
+        <div class="dialog-box">
+          <p>Are you sure you want to save changes?</p>
+          <button id="confirm-yes">Yes</button>
+          <button id="confirm-no">No</button>
+        </div>
+      </div>
+    </section>
+
+    {% include 'footer.html' %}
+    <script
+      src="{{ url_for('static', filename='main.js') }}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='login-auth.js') }}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='scripts.js') }}"
+      type="module"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='profil.js') }}"
+      type="module"
+    ></script>
+  </body>
+</html>

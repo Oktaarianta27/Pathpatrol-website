@@ -1,0 +1,191 @@
+:root {
+  --primary-color: #f4f4f4;
+  --primary-light-color: #ffe769;
+  --secondary-color: #ffe4ba;
+  --secondary-light-color: #fff6e8;
+  --post-color: #62eea8;
+  --delete-color: #ff9f9f;
+  --light-color: #fffefc;
+  --grey-color: #747e79;
+  --dark-color: #000000;
+
+  --primary-font: "Poppins", sans-serif;
+  --seconday-font: "Poppins", sans-serif;
+
+  --border-width: 3px;
+  --element-border-radius: 5px;
+
+  --button-height: 5px;
+  --small-button-height: 2px;
+
+  --element-padding: 0.8em;
+
+  --maximum-width: 320px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  color: var(--dark-color);
+  background-color: var(--primary-color);
+  font-family: var(--primary-font);
+  height: 100vh;
+}
+
+main {
+  padding: 2rem;
+  height: 100vh;
+}
+
+/* === Structure === */
+
+.container {
+  max-width: var(--maximum-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* === Navbar === */
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 8px 16px -4px rgba(128, 128, 128, 0.2);
+  width: 100%;
+  height: 80px;
+}
+
+.logo-img {
+  width: 200px;
+  margin-left: 1rem;
+}
+
+.logo {
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.navbar a {
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  color: #000000;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.navbar a:hover {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  color: rgb(0, 0, 0);
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closebtn {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* === Mobile View Styles === */
+@media screen and (max-width: 768px) {
+  .logo-img {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .navbar-right {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-color);
+    opacity: 0.9;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s; /* Smooth transition for sliding in/out */
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Class to slide in the navbar */
+  .navbar-right.active {
+    left: 0;
+  }
+
+  .navbar-right a {
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+  }
+
+  .navbar-right a:hover {
+    background-color: inherit;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2.2rem;
+    cursor: pointer;
+  }
+
+  .closebtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: black;
+  }
+}

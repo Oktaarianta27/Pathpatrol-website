@@ -1,0 +1,48 @@
+<div class="sidebar close">
+  <div class="logo-details">
+    <a href="{{ url_for('private.dashboard')}}">
+      <img
+        src="{{ url_for('static', filename='images/logoss.png') }}"
+        alt="logo-details"
+        class="logos-img"
+      />
+    </a>
+    <span class="logo_name">PATHPATROL</span>
+  </div>
+  <ul class="nav-links">
+    <li>
+      <a href="{{ url_for('private.dashboard') }}" data-page="dashboard">
+        <i class="bx bx-grid-alt"></i>
+        <span class="link_name">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ url_for('private.laporan') }}" data-page="laporan">
+        <i class="bx bx-pie-chart-alt-2"></i>
+        <span class="link_name">Laporan</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{url_for('private.panduan') }}" data-page="panduan">
+        <i class="bx bx-line-chart"></i>
+        <span class="link_name">Panduan</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{url_for('private.profil') }}" data-page="profil">
+        <i class="bx bx-compass"></i>
+        <span class="link_name">Profil</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<section class="home-section">
+  <div class="home-content">
+    <i class="bx bx-menu"></i>
+  </div>
+  <div class="logout-content">
+    <a href="{{ url_for('auth.logout') }}" data-page="logout">
+      <i class="bx bx-log-out"></i>
+    </a>
+  </div>
+</section>
